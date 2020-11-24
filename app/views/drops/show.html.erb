@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @drop.title %></h1>
+  <%= @drop.description %>
+  <hr class="my-4">
+  
+  <%= link_to 'View File', @drop.file %>
+<br/>
+<%= link_to 'Download', @drop.file, download: '' %>
+
+<br/><br/>
+<%= link_to 'Edit', edit_drop_path(@drop), class: :"btn btn-secondary" %> 
+<%= link_to 'Back', drops_path, class: :"btn btn-dark" %>
+
+
+</div>
+
+
+

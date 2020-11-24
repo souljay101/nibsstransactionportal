@@ -1,0 +1,49 @@
+<% if user_signed_in?%>
+
+<p id="notice"><%= notice %></p>
+
+<div class = 'container'>
+
+<h4>Files</h4>
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drops.each do |drop| %>
+      <tr>
+        <td><%= drop.title %></td>
+        <td><%= drop.description %></td>
+        <td><%= link_to 'Show', drop %></td>
+        <td><%= link_to 'Edit', edit_drop_path(drop) %></td>
+        <td><%= link_to 'Delete', drop, method: :delete, data: { confirm: 'Are you sure?' }, class: :'btn btn-outline-danger btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add File', new_drop_path, class: :"btn btn-primary" %>
+</div>
+<% else %>
+
+  <div class = 'container'>
+    <br/><h1>Welcome!!!</h4> 
+    <br/><br/>
+
+    NIBBS POS Transaction Confirmation Portal.
+    <br/>
+    
+    <p>
+    <br/>
+    Please sign in to continue...</p>
+
+  </div>
+
+<% end %>

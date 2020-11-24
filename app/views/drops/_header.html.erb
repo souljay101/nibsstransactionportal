@@ -1,0 +1,15 @@
+
+<nav class="navbar navbar-dark bg-dark">
+<%= link_to "NIBSS", drops_path, class: "navbar-brand" %>
+  <% if user_signed_in? %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-link" %>
+  <% else%>
+
+<%= link_to "Sign In", new_user_session_path, class: "navbar-link" %>
+<%= link_to "Sign Up", new_user_registration_path, class: "navbar-link" %>
+  <% end %>
+
+    
+  </a>
+</nav>
