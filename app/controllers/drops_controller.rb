@@ -1,10 +1,11 @@
 class DropsController < ApplicationController
-  before_action :set_drop, only: [:show, :edit, :update, :destroy]
+  before_action :set_drop, only: [:show, :edit, :update, :destroy, :query_status]
 
   # GET /drops
   # GET /drops.json
   def index
     @drops = Drop.all
+
   end
 
   # GET /drops/1
@@ -19,8 +20,10 @@ class DropsController < ApplicationController
 
   # GET /drops/1/edit
   def edit
-  end
+    
 
+  end
+  
   # POST /drops
   # POST /drops.json
   def create
@@ -60,6 +63,11 @@ class DropsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def query_status
+    redirect_to drops_url, notice: 'Job functionality not enabled! Work in Progress....'
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +77,6 @@ class DropsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def drop_params
-      params.require(:drop).permit(:title, :description, :file)
+      params.require(:drop).permit(:title, :description, :file, :click)
     end
 end

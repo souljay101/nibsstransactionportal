@@ -1,15 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'NIBSS portal', root_path, class: "navbar-brand" %>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<nav class="navbar navbar-dark bg-dark">
-<%= link_to "NIBSS", drops_path, class: "navbar-brand" %>
-  <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
-    <%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-link" %>
-  <% else%>
-
-<%= link_to "Sign In", new_user_session_path, class: "navbar-link" %>
-<%= link_to "Sign Up", new_user_registration_path, class: "navbar-link" %>
-  <% end %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+       
+        
+      </li>
 
     
+        
+      </li>
+
+
+      
+      
+      <% if user_signed_in? %>
+
+        <li class="nav-item">
+    		<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
+        
+        </li>
+
+        <li class="nav-item">
+   		<%= link_to "Edit Profile", edit_user_registration_path, class: "navbar-brand" %>
+   		</li>
+  
+  	  <% else%>
+		
+		<li class="nav-item">
+		<%= link_to "Sign In", new_user_session_path, class: "navbar-brand" %>
+		</li>
+		
+		<li class="nav-item">
+		<%= link_to "Sign Up", new_user_registration_path, class: "navbar-brand" %>
+  		</li>
+  		<% end %>
+
+
+   
   </a>
 </nav>
+
+      
